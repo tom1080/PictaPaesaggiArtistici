@@ -1,6 +1,3 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
-
-// Inline storage implementation for Vercel
 const events = [
   {
     id: 1,
@@ -8,7 +5,7 @@ const events = [
     description: "Mostra collettiva di arte astratta contemporanea con opere di artisti locali e internazionali.",
     date: "15 MAR 2024",
     location: "Galleria d'Arte Moderna",
-    createdAt: new Date()
+    createdAt: new Date().toISOString()
   },
   {
     id: 2,
@@ -16,7 +13,7 @@ const events = [
     description: "Laboratorio pratico di pittura astratta per principianti e esperti. Materiali inclusi.",
     date: "22 MAR 2024",
     location: "Studio d'Arte Centrale",
-    createdAt: new Date()
+    createdAt: new Date().toISOString()
   },
   {
     id: 3,
@@ -24,11 +21,11 @@ const events = [
     description: "Incontro con critici d'arte sul ruolo dell'arte astratta nella valorizzazione culturale.",
     date: "05 APR 2024",
     location: "Auditorium Comunale",
-    createdAt: new Date()
+    createdAt: new Date().toISOString()
   }
 ];
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -38,19 +35,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return;
   }
 
-  try {
-    if (req.method === 'GET') {
-      res.json(events);
-    } else if (req.method === 'POST') {
-      // For demo purposes, just return success
-      res.json({ success: true, message: "Evento creato con successo" });
-    } else {
-      res.status(405).json({ message: 'Method not allowed' });
-    }
-  } catch (error: any) {
-    res.status(400).json({ 
-      success: false, 
-      message: error.message || "Errore del server" 
-    });
+  if (req.method === 'GET') {
+    res.status(200).json(events);
+  } else if (req.method === 'POST') {
+    res.status(200).json({ success: true, message: "Evento creato con successo" });
+  } else {
+    res.status(405).json({ message: 'Method not allowed' });
   }
 }

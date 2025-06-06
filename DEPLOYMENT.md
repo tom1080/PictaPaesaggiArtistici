@@ -12,7 +12,7 @@ Il progetto è già configurato per Vercel con:
 1. **Push su GitHub**:
    ```bash
    git add .
-   git commit -m "feat: ready for vercel deployment"
+   git commit -m "fix: simplify vercel deployment configuration"
    git push origin main
    ```
 
@@ -20,11 +20,13 @@ Il progetto è già configurato per Vercel con:
    - Vai su [vercel.com](https://vercel.com)
    - Clicca "New Project"
    - Importa il repository GitHub
-   - Vercel userà automaticamente la configurazione in `vercel.json`
+   - Vercel rileverà automaticamente Vite
+   - Non modificare le impostazioni, usa quelle di default
 
 3. **Il sito sarà live**:
+   - Build automatico del frontend Vite
+   - API functions in `/api` funzioneranno automaticamente
    - URL format: `https://your-project.vercel.app`
-   - Deploy automatici ad ogni push su main
 
 ### 2. Deploy su Netlify
 
