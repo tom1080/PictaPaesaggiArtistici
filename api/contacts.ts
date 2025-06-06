@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { storage } from '../server/storage';
-import { insertContactSchema } from '../shared/schema';
+
+// Simple in-memory storage for demo
+let contacts: any[] = [];
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -14,11 +15,27 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     if (req.method === 'GET') {
-      const contacts = await storage.getContacts();
       res.json(contacts);
     } else if (req.method === 'POST') {
-      const validatedData = insertContactSchema.parse(req.body);
-      const contact = await storage.createContact(validatedData);
+      const { nome, email, messaggio } = req.body;
+      
+      if (!nome || !email || !messaggio) {
+        res.status(400).json({ 
+          success: false, 
+          message: "Tutti i campi sono obbligatori" 
+        });
+        return;
+      }
+      
+      const contact = {
+        id: contacts.length + 1,
+        nome,
+        email,
+        messaggio,
+        createdAt: new Date()
+      };
+      
+      contacts.push(contact);
       res.json({ success: true, contact });
     } else {
       res.status(405).json({ message: 'Method not allowed' });
