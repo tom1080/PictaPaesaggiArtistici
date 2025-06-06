@@ -18,8 +18,9 @@ export default function MissionSection() {
               alt="Arte astratta colorata" 
               className="rounded-2xl shadow-2xl w-full h-auto"
             />
-            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-accent rounded-full opacity-80"></div>
-            <div className="absolute -top-6 -left-6 w-16 h-16 bg-primary rounded-lg transform rotate-12 opacity-60"></div>
+            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-accent rounded-full opacity-70 blur-sm"></div>
+            <div className="absolute -top-6 -left-6 w-16 h-16 bg-primary rounded-lg transform rotate-12 opacity-80"></div>
+            <div className="absolute top-1/2 -right-4 w-12 h-20 bg-secondary rounded-full opacity-50 transform rotate-45"></div>
           </div>
         </div>
       </div>

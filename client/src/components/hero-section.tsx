@@ -8,11 +8,18 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Abstract geometric background */}
+      {/* Abstract artistic background */}
       <div className="absolute inset-0 gradient-mesh"></div>
-      <div className="absolute top-10 left-10 w-32 h-32 bg-primary rounded-full opacity-20 animate-pulse-slow"></div>
-      <div className="absolute bottom-20 right-20 w-24 h-24 bg-accent transform rotate-45 opacity-30 animate-float"></div>
-      <div className="absolute top-1/2 left-1/4 w-16 h-48 bg-secondary opacity-15 transform -rotate-12"></div>
+      
+      {/* Artistic geometric elements */}
+      <div className="absolute top-20 left-16 w-40 h-40 gradient-artistic rounded-full opacity-25 animate-pulse-slow blur-sm"></div>
+      <div className="absolute bottom-32 right-24 w-32 h-32 bg-accent transform rotate-45 opacity-40 animate-float"></div>
+      <div className="absolute top-1/3 left-1/5 w-20 h-60 bg-secondary opacity-20 transform -rotate-12 rounded-full"></div>
+      <div className="absolute bottom-1/4 left-1/3 w-24 h-24 bg-primary opacity-30 transform rotate-12 rounded-lg"></div>
+      <div className="absolute top-3/4 right-1/4 w-16 h-40 bg-accent opacity-25 transform rotate-45 rounded-full"></div>
+      
+      {/* Subtle texture overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-background/5 to-muted/10"></div>
       
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">

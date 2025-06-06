@@ -55,9 +55,10 @@ export default function EventsSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {events?.map((event, index) => {
               const gradients = [
-                "from-primary to-secondary",
-                "from-accent to-primary", 
-                "from-secondary to-accent"
+                "from-primary via-accent/80 to-secondary",
+                "from-secondary via-primary/70 to-accent", 
+                "from-accent via-secondary/60 to-primary",
+                "from-primary/90 via-secondary/80 to-accent/90"
               ];
               const gradient = gradients[index % gradients.length];
               
@@ -68,7 +69,8 @@ export default function EventsSection() {
                   onClick={() => handleEventClick(event.id)}
                 >
                   <div className={`relative h-48 bg-gradient-to-br ${gradient}`}>
-                    <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                    <div className="absolute inset-0 bg-black/15 group-hover:bg-black/25 transition-all duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
                     <div className="absolute bottom-4 left-4 text-white">
                       <span className="bg-white/90 text-foreground px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
                         <Calendar className="w-3 h-3" />

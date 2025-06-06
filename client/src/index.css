@@ -3,48 +3,48 @@
 @tailwind utilities;
 
 :root {
-  --background: 350 15% 97%; /* Soft cream white */
-  --foreground: 220 25% 25%; /* Muted charcoal */
-  --muted: 340 20% 95%; /* Light blush */
-  --muted-foreground: 220 15% 45%;
-  --popover: 350 15% 97%;
-  --popover-foreground: 220 25% 25%;
-  --card: 350 15% 97%;
-  --card-foreground: 220 25% 25%;
-  --border: 340 12% 88%;
-  --input: 340 12% 88%;
-  --primary: 320 45% 75%; /* Soft dusty rose */
+  --background: 45 25% 96%; /* Warm pearl white */
+  --foreground: 210 20% 18%; /* Rich charcoal */
+  --muted: 35 15% 92%; /* Subtle warm gray */
+  --muted-foreground: 210 12% 42%;
+  --popover: 45 25% 96%;
+  --popover-foreground: 210 20% 18%;
+  --card: 45 25% 96%;
+  --card-foreground: 210 20% 18%;
+  --border: 35 8% 85%;
+  --input: 35 8% 85%;
+  --primary: 25 85% 58%; /* Vibrant terracotta */
   --primary-foreground: 0 0% 100%;
-  --secondary: 200 35% 70%; /* Muted sage blue */
+  --secondary: 195 100% 25%; /* Deep teal */
   --secondary-foreground: 0 0% 100%;
-  --accent: 45 60% 80%; /* Soft peachy yellow */
-  --accent-foreground: 220 25% 25%;
-  --destructive: 0 70% 75%;
+  --accent: 280 60% 65%; /* Rich purple */
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 75% 60%;
   --destructive-foreground: 0 0% 98%;
-  --ring: 220 25% 25%;
+  --ring: 210 20% 18%;
   --radius: 0.75rem;
 }
 
 .dark {
-  --background: 220 25% 8%; /* Deep charcoal */
-  --foreground: 340 20% 95%; /* Light blush */
-  --muted: 220 20% 15%;
-  --muted-foreground: 340 15% 70%;
-  --popover: 220 25% 8%;
-  --popover-foreground: 340 20% 95%;
-  --card: 220 25% 8%;
-  --card-foreground: 340 20% 95%;
-  --border: 220 20% 15%;
-  --input: 220 20% 15%;
-  --primary: 320 35% 65%; /* Muted dusty rose */
+  --background: 210 25% 6%; /* Rich black */
+  --foreground: 45 20% 94%; /* Warm white */
+  --muted: 210 20% 12%;
+  --muted-foreground: 45 12% 72%;
+  --popover: 210 25% 6%;
+  --popover-foreground: 45 20% 94%;
+  --card: 210 25% 6%;
+  --card-foreground: 45 20% 94%;
+  --border: 210 20% 12%;
+  --input: 210 20% 12%;
+  --primary: 25 75% 55%; /* Warm terracotta */
   --primary-foreground: 0 0% 100%;
-  --secondary: 200 25% 60%; /* Darker sage blue */
+  --secondary: 195 80% 35%; /* Bright teal */
   --secondary-foreground: 0 0% 100%;
-  --accent: 45 50% 70%; /* Muted peachy yellow */
-  --accent-foreground: 220 25% 8%;
-  --destructive: 0 50% 65%;
+  --accent: 280 50% 70%; /* Elegant purple */
+  --accent-foreground: 210 25% 6%;
+  --destructive: 0 65% 65%;
   --destructive-foreground: 0 0% 98%;
-  --ring: 340 20% 95%;
+  --ring: 45 20% 94%;
 }
 
 @layer base {
@@ -81,8 +81,24 @@
   }
 
   .gradient-mesh {
-    background: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--primary)) 50%, hsl(var(--accent)) 100%);
-    opacity: 0.1;
+    background: linear-gradient(135deg, 
+      hsl(var(--secondary) / 0.15) 0%, 
+      hsl(var(--primary) / 0.12) 35%, 
+      hsl(var(--accent) / 0.08) 70%, 
+      transparent 100%);
+  }
+
+  .gradient-artistic {
+    background: linear-gradient(120deg, 
+      hsl(var(--primary)) 0%, 
+      hsl(var(--accent)) 50%, 
+      hsl(var(--secondary)) 100%);
+  }
+
+  .gradient-subtle {
+    background: linear-gradient(45deg, 
+      hsl(var(--secondary) / 0.1) 0%, 
+      hsl(var(--accent) / 0.05) 100%);
   }
 
   .line-clamp-2 {

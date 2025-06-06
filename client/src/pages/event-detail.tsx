@@ -114,8 +114,9 @@ export default function EventDetail() {
                   </div>
                 </div>
               </Card>
-              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-accent rounded-full opacity-60"></div>
-              <div className="absolute -top-6 -left-6 w-16 h-16 bg-primary rounded-lg transform rotate-12 opacity-70"></div>
+              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-accent rounded-full opacity-50 blur-sm"></div>
+              <div className="absolute -top-6 -left-6 w-16 h-16 bg-primary rounded-lg transform rotate-12 opacity-80"></div>
+              <div className="absolute top-1/3 -left-8 w-8 h-32 bg-secondary rounded-full opacity-40 transform -rotate-12"></div>
             </div>
           </div>
         </div>

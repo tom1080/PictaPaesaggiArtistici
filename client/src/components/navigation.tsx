@@ -23,7 +23,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className={`bg-white sticky top-0 z-50 transition-shadow duration-200 ${isScrolled ? 'shadow-md' : 'shadow-sm'}`}>
+    <nav className={`bg-background/95 backdrop-blur-md sticky top-0 z-50 transition-all duration-200 ${isScrolled ? 'shadow-lg border-b border-border/50' : 'shadow-sm'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
