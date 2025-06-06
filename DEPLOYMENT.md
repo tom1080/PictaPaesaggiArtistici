@@ -1,21 +1,30 @@
 # Guida al Deployment
 
-## Opzioni di Deployment
+## Deploy su Vercel (Consigliato)
 
-### 1. Deploy su Vercel (Consigliato)
+### Passo 1: Preparazione
+Il progetto è già configurato per Vercel con:
+- `vercel.json` ottimizzato
+- API endpoints serverless in `/api`
+- Build configuration per Vite
 
-1. **Connetti il repository GitHub**:
+### Passo 2: Deploy
+1. **Push su GitHub**:
+   ```bash
+   git add .
+   git commit -m "feat: ready for vercel deployment"
+   git push origin main
+   ```
+
+2. **Connetti a Vercel**:
    - Vai su [vercel.com](https://vercel.com)
    - Clicca "New Project"
-   - Importa il tuo repository GitHub
+   - Importa il repository GitHub
+   - Vercel userà automaticamente la configurazione in `vercel.json`
 
-2. **Configurazione automatica**:
-   - Vercel rileverà automaticamente il progetto Vite
-   - Le configurazioni sono già nel file `vercel.json`
-
-3. **Deploy**:
-   - Clicca "Deploy"
-   - Il sito sarà disponibile su un URL `.vercel.app`
+3. **Il sito sarà live**:
+   - URL format: `https://your-project.vercel.app`
+   - Deploy automatici ad ogni push su main
 
 ### 2. Deploy su Netlify
 

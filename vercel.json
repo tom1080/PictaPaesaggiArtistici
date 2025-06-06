@@ -1,7 +1,16 @@
 {
-  "buildCommand": "cd client && npm install && npm run build",
+  "version": 2,
+  "buildCommand": "vite build",
   "outputDirectory": "client/dist",
   "installCommand": "npm install",
+  "functions": {
+    "api/events.ts": {
+      "runtime": "@vercel/node@3"
+    },
+    "api/contacts.ts": {
+      "runtime": "@vercel/node@3"
+    }
+  },
   "rewrites": [
     {
       "source": "/((?!api).*)",
